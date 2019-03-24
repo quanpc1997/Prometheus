@@ -4,7 +4,7 @@
 
 Prometheus là một nền tảng điện toán đám mây _(Cloud Native Computing Foudation project)_, là một hệ thống và dịch vụ monitoring system. Nó thu nhập những metrics từ những node mà nó quan sát, đánh giá các dữ liệu, hiển thị kết quả và nó có thể kích hoạt những cảnh báo nếu hệ thống có thể gặp vấn đề.
 
-[Prometheus Logo](./Images/logo.png)
+![Prometheus Logo](./Images/logo.png)
 
 Các tính năng phân biệt chính của Prometheus so với các hệ thống giám sát khác là:
 	* Mô hình dữ liệu đa chiều _(thời gian được xác định bởi tên số liệu và bộ key/value)_
@@ -24,10 +24,11 @@ Các tính năng phân biệt chính của Prometheus so với các hệ thống
 
 ## Kiến trúc Prometheus
 Prometheus gồm những thành phần sau:
+
 	* **Prometheus server** là thành phần chính của hệ thống - cái mà cảnh báo và lưu trữ dữ liệu theo thời gian.
 	* **client libraries** thư viện code các plugin.
 	* Một Push Gateway cho hỗ trợ các công việc ngắn hạn.
 	* **Exporter** thu nhập dữ liệu metric từ các service HAProxy, StatsD, Graphite,...
 	* **Alertmanager** là thành phần quản lí cảnh bảo và gửi cảnh báo,....
 
-[Kiến trúc Prometheus](./Images/kientruc.png)
+![Kiến trúc Prometheus](./Images/kientruc.png)
