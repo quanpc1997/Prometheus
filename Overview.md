@@ -2,7 +2,7 @@
 
 ## Tổng quan
 
-Prometheus là một nền tảng điện toán đám mây _(Cloud Native Computing Foudation project)_, là một hệ thống và dịch vụ monitoring system. Nó thu nhập những metrics từ những node mà nó quan sát, đánh giá các dữ liệu, hiển thị kết quả và nó có thể kích hoạt những cảnh báo nếu hệ thống có thể gặp vấn đề.
+Prometheus là một nền tảng mã nguồn mở Monitoring thuộc tổ chức Cloud Native Computing Foudation project, là một hệ thống và dịch vụ monitoring system. Nó thu nhập những metrics từ những node mà nó quan sát, đánh giá các dữ liệu, hiển thị kết quả và nó có thể kích hoạt những cảnh báo nếu hệ thống có thể gặp vấn đề.
 
 ![Prometheus Logo](./Images/logo.png)
 
