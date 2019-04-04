@@ -2,8 +2,11 @@
 
 ## Các hàm hay sử dụng.
 ### Host
+
 **Để lấy các job:** _label_values(node_exporter_build_info, job)_
+
 **Để lấy các node:** _label_values(node_exporter_build_info{job=~"$job"}, instance)_
+
 **Để lấy các port:** _label_values(node_exporter_build_info{instance=~"$node:(.*)"}, instance)_
 
 ### CPU
