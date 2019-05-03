@@ -143,29 +143,10 @@ Dự đoán giá trị của timeseries t giây kể từ bây giờ, dựa trê
 ## rate()
 rate(v range-vector)
 Tính toán tốc độ trung bình của increase trong timeseries trong range vector.
-Cho ví dụ trả về tốc độ CPU đo đạc được sau 5 phút:
-Khi có _(rate()_:
+Cho ví dụ trả về tốc độ request HTTP đo đạc được sau 5 phút:
 ```sh
-rate(node_cpu_seconds_total{instance=~"172.27.100.154:9100",job=~"lab04",mode="user"}[5m]) 
-
-{cpu="0",instance="172.27.100.154:9100",job="lab04",mode="user"}	0.02101754385965474
-{cpu="1",instance="172.27.100.154:9100",job="lab04",mode="user"}	0.021263157894741435
-{cpu="2",instance="172.27.100.154:9100",job="lab04",mode="user"}	0.014350877192982968
-{cpu="3",instance="172.27.100.154:9100",job="lab04",mode="user"}	0.011438596491228836
+rate(http_requests_total{job="api-server"}[5m])
 ```
-Khi không có _rate()_:
-```sh
-node_cpu_seconds_total{cpu="0",instance="172.27.100.154:9100",job="lab04",mode="user"}
-17930.15 @1553766703.144
-17930.44 @1553766718.144
-17930.78 @1553766733.144
-17931.17 @1553766748.144
-17931.48 @1553766763.144
-17931.72 @1553766778.144
-.....
-```
-Rõ ràng khi có rate dữ liệu sẽ được xử lí. Ngược lại thì dữ liệu ở dạng thuần rất khó đọc. Rate giúp ta tính toán tốc độ của một số thành phần.
-
 _rate_ chỉ lên sử dụng cùng counter. Nó phù hợp nhất cho việc cảnh báo và đồ thị của slow-moving counters.
 
 Khi kết hợp _rate()_ cùng với một toán tử tông hợp thì luôn luôn _rate()_ sẽ nằm ở vị trí đầu tiên sau đó là các toán tử khác. Ngoài ra không thể phát hiện counter restart khi target restart.
