@@ -43,8 +43,11 @@ Chú ý local storage có hạn chế rằng bộ nhớ khó thể nhóm lại h
 
 ## Operational aspects
 Prometheus có nhiều flags chấp nhận cấu hình trên local storage. Một số tham số quan trọng là:
+
 	* _--storage.tsdb.path_: Quy định vị trí lưu dữ liệu của Promethes. Mặc định là _data/_.
+	
 	* _--storage.tsdb.retention.time_: Quy định thời gian dữ liệu được lưu trữ. Mặc định là 15 ngày.
+	
 	* _--storage.tsdb.retention.size_: Quy định dung lượng tối đa của block(Điều này không bao gồm dung lượng của WAL). Dữ liệu cũ nhất sẽ được xóa đi đầu tiên. Mặc định tùy chọn này bị vô hiệu hóa. Cờ này chỉ mang tính chất trải nhiệm và có thể bị thay đổi trong tương lai. Các đơn vị hỗ trợ: KB, MB, GB, PB.
 
 Trung binh, Prometheus chỉ sử dụng 1-2 bytes cho mỗi sample. Do vậy, để lập kế hoạch dung lượng của máy chủ Prometheus, bạn có thể sử dụng công thức sau:
@@ -62,7 +65,9 @@ Lưu trữ cục bộ của Prometheus bị giới hạn bởi các nút đơn l
 
 ### Tổng quan
 Tích hợp Prometheus cùng với hệ thống remote systems bằng một trong 2 con đường sau:
+
 	* Prometheus có thể ghi những samples mà nó thu nhập từ memote URL theo định dạng chuẩn.
+	
 	* Prometheus có thể đọc dữ liệu sample từ một remote URL theo một chuẩn định sẵn.
 
 ![Tích hợp Prometheus cùng với hệ thống remote systems](./Images/remote_integrations.png)
